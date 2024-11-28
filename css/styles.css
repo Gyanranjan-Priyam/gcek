@@ -1,0 +1,920 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Geist+Mono:wght@100..900&family=Lacquer&family=Press+Start+2P&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lacquer&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Lacquer&family=Press+Start+2P&display=swap');
+
+*,
+html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+
+:root {
+  --primary-font: "Montserrat";
+  --secondary-font: "Fira Code";
+  --primary-text-color: #ffffff;
+  --secondary-text-color: lime;
+  --primary-color: rgba(5, 30, 62, 0.4);
+  --secondary-color: #00f5a0;
+}
+
+
+body {
+  background: linear-gradient(180deg, #051e3e 0%, #023984 100%);
+  color: var(--primary-text-color);
+  font-family: var(--primary-font);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 10%;
+  height: 1.5rem;
+  background-color: transparent;
+   /* Semi-transparent background */
+  backdrop-filter: blur(5px); /* Apply blur effect to the background */
+}
+
+header .logo img {
+  max-height: 80px; /* Adjust the height to fit the navbar */
+  width: auto; /* Maintain aspect ratio */
+  display: block; /* Prevent inline spacing issues */
+}
+
+@media (max-width: 768px) {
+  header .logo img {
+    max-height: 40px; /* Adjust for smaller screens */
+  }
+}
+
+header .logo {
+  font-size: 2.0rem;
+  font-weight: 800;
+  color: #e8102a;
+  text-decoration: none;
+}
+
+header .logo:hover {
+  color: #fc8c05;
+}
+
+header .navbar ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+
+}
+
+header .navbar li {
+margin-right: 3.5rem;
+}
+
+header .navbar ul li a {
+  font-size: 1.4rem;
+  color: #069aef;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+  border-bottom: 0.2s;
+}
+
+header .navbar ul li a.active,
+header .navbar ul li a:hover {
+  color: lime;
+  border-bottom: 0.1rem solid lime;
+  padding: 0.3rem 0;
+}
+#menu {
+  font-size: 3rem;
+  cursor: pointer;
+  color: rgb(24, 2, 63);
+  display: none;
+}
+@media (max-width: 768px) {
+  #menu {
+    display: block;
+  }
+header .navbar {
+  position: fixed;
+  top: 6.5rem;
+  right: -120%;
+  width: 75%;
+  height: 100%;
+  background-color: #0e0f31;
+  transition: right 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+}
+header .navbar ul {
+  flex-flow: column;
+  padding: 1rem;
+}
+header .navbar ul li {
+  text-align: center;
+  width: 100%;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  width: 26rem;
+}
+header .navbar ul li a {
+  display: block;
+  padding: 1rem;
+  text-align: left;
+  color: #fff;
+  font-size: 2rem;
+}
+header .navbar ul li a.active,
+header .navbar ul li a:hover {
+  padding: 1rem;
+  color: #fff;
+  border-radius: 0.5rem;
+  border-bottom: 0.5rem solid #011aff;
+}
+.fa-times {
+  transform: rotate(180deg);
+}
+header .navbar.nav-toggle {
+  right: 0;
+}
+}
+
+
+.conatiner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 100vh; /* Full viewport height */
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5); /* Optional overlay to make text stand out */
+}
+/* Particles.js Background */
+.matrix-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#matrix {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.header__heading {
+  font-family: "Ubuntu", sans-serif;
+  font-optical-sizing: auto;
+  font-variation-settings: "ROND" 0;
+  font-style: normal;
+  font-weight: 500;
+  padding: 6rem;
+  font-size: 9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff; /* White color for main text */
+  position: relative;
+  display: inline-block;
+  z-index: 2; /* Bring main text to the front */
+  overflow: hidden; /* Prevent overflow from glitch effect */
+}
+
+.header__heading::before,
+.header__heading::after {
+  content: attr(data-text); /* Duplicate the text content */
+  position: absolute;
+  padding: 6rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white; /* Hide the original text for pseudo-elements */
+  z-index: -1; /* Place glitch layers behind the main text */
+  clip-path: inset(0 0 50% 0); /* Control visible portion */
+  animation: glitch 0.4s infinite ease-in-out;
+}
+
+.header__heading::after {
+  color: #00ffea; /* Blue glitch layer */
+  clip-path: inset(50% 0 0 0);
+  animation: glitch 0.4s infinite ease-in-out reverse;
+}
+
+.header__heading::before {
+  color: #ff0000; /* Red glitch layer */
+}
+
+/* Keyframes for glitch effect */
+@keyframes glitch {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-3px, -3px);
+  }
+  50% {
+    transform: translate(3px, 3px);
+  }
+  75% {
+    transform: translate(-3px, 3px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+
+.header__sub-heading {
+  font-size: 2.2rem;
+  color: var(--secondary-color);
+  font-family: "Fira Code";
+}
+
+.header {
+  transform: translateY(25%);
+}
+
+/* Social Media Bar on the Right Side */
+.social-media-bar {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 10;
+}
+
+.social-media-bar a {
+  display: block;
+  font-size: 24px;
+  color: #fff;
+  background: transparent;
+  text-decoration: none;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+  opacity: 0.8; /* Add opacity for a slightly faded look */
+}
+
+.social-media-bar a:hover {
+  transform: translateX(10px); /* Move to the right on hover */
+  opacity: 1; /* Make the icon fully opaque */
+  background: linear-gradient(135deg, lime, #24a0ff); /* Gradient changes on hover */
+  border-color: #fff; /* Ensure the border remains white */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.about-section {
+  position: relative;
+  height: 100vh; /* Full viewport height */
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+/* Wrapper Heading Fade-In Animation */
+.wrapper__heading {
+  font-family: "Lacquer", system-ui;
+  font-style: normal;
+  font-size: 3.5rem;
+  font-weight: 500;
+  color: var(--primary-text-color);
+  margin-bottom: 60px;
+
+  /* Initial state for animation */
+  opacity: 0; 
+  transform: translateY(20px);
+  animation: fadeIn 1.5s ease-in-out forwards; /* Trigger animation */
+}
+
+.wrapper__heading h2{
+  color: white;
+}
+
+.wrapper__heading span{
+  color: lime;
+}
+
+/* Fade-In Keyframes */
+@keyframes fadeIn {
+  0% {
+    opacity: 0; 
+    transform: translateY(20px); /* Slightly move down */
+  }
+  100% {
+    opacity: 1; 
+    transform: translateY(0); /* Final position */
+  }
+}
+
+
+
+.wrapper__paragraph {
+  color: var(--secondary-text-color);
+  margin: 0 2.4rem;
+  text-align: center;
+  font-size: 1.4rem;
+  max-width: 80%;
+  line-height: 2.4rem;
+}
+
+
+
+.wrapper__heading {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 4rem; /* Adjust size as needed */
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff; /* Main text color */
+  z-index: 2; /* Ensure it remains in front */
+  overflow: hidden; /* Prevent overflow from glitch layers */
+  text-align: center; /* Center align */
+}
+
+
+
+.team-section {
+  position: relative;
+  height: 100vh; /* Full viewport height */
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper__team {
+    position: relative;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 4rem; /* Adjust size as needed */
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff; /* Main text color */
+    z-index: 2; /* Ensure it remains in front */
+    overflow: hidden; /* Prevent overflow from glitch layers */
+    text-align: center; /* Center align */
+  }
+  
+  
+
+/* Wrapper Heading Fade-In Animation */
+.wrapper__team{
+  font-family: "Ubuntu", sans-serif;
+  font-style: normal;
+  font-size: 3.5rem;
+  font-weight: 500;
+  color: var(--primary-text-color);
+  margin-bottom: 40px;
+  border-radius: 50px;
+
+  /* Initial state for animation */
+  opacity: 0; 
+  transform: translateY(20px);
+  animation: fadeIn 1.5s ease-in-out forwards; /* Trigger animation */
+}
+
+.wrapper__team h2{
+  color: white;
+}
+
+.wrapper__team span{
+  color: lime;
+}
+
+
+
+/* Fade-In Keyframes */
+@keyframes fadeIn {
+  0% {
+    opacity: 0; 
+    transform: translateY(20px); /* Slightly move down */
+  }
+  100% {
+    opacity: 1; 
+    transform: translateY(0); /* Final position */
+  }
+}
+
+
+
+.team__cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#team-socials {
+  display: none;
+}
+
+.card {
+  width: 400px; /* Increased width */
+  height: auto; /* Allow height to adjust based on content */
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Optional border for better visibility */
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.05); /* Slight lift and scale on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.card__image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.card:hover .card__image {
+  transform: rotate(360deg); /* Rotate image on hover */
+}
+
+.card__name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.card__role {
+  font-size: 1.2rem;
+  color: limegreen;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.card__socials a {
+  color: rgb(73, 229, 30); /* Default to LinkedIn Blue */
+  margin: 0 5px;
+  font-size: 1.5rem;
+}
+
+.card__socials a:hover {
+  color: #333; /* Change color on hover */
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7); /* Background with transparency */
+}
+
+.modal-content {
+  background: black(164, 103, 103);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: white;
+  margin: 15% auto;
+  padding: 30px;
+  border: 1px solid #888;
+  width: 80%; /* Modal content width */
+  max-width: 500px;
+  text-align: center;
+  border-radius: 15px; /* Curved edges */
+  backdrop-filter: blur(10px); /* Background blur */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional shadow for depth */
+  transition: background 0.5s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+
+.modal-content:hover {
+  background: linear-gradient(45deg, lime, #24a0ff, rgb(83, 174, 83), #95ccf6); /* Initial gradient */
+  transform: scale(1.05); /* Slightly enlarges the card on hover */
+  animation: gradientAnimation 0.3s ease-in 1s infinite reverse both running slidein;; /* Keyframe animation for gradient */
+}
+@keyframes gradientAnimation {
+  0% {
+      background: linear-gradient(45deg, lime, #24a0ff, rgb(83, 174, 83), #95ccf6);
+  }
+  100% {
+      background: linear-gradient(-45deg, lime, #24a0ff, rgb(83, 174, 83), #95ccf6); /* Gradient moves from bottom to top */
+  }
+}
+
+
+#modal-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures the image scales correctly */
+  border: 5px solid transparent; /* Initial transparent border */
+  background: linear-gradient(45deg, #1d6fe4, #24a0ff, #ff6ec4, #ff9a3e); /* Gradient for the border */
+  background-size: 300% 300%; /* Enlarges the gradient for smooth animation */
+  background-clip: padding-box; /* Ensures gradient stays outside the image */
+  padding: 5px; /* Space for the animated border */
+  animation: gradient-border 4s infinite linear; /* Infinite gradient animation */
+}
+
+@keyframes gradient-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.close {
+  color: red;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* Modal Social Media Styles */
+#modal-socials a {
+  display: inline-block;
+  margin: 10px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  transition: color 0.3s;
+}
+
+#modal-socials a:hover {
+  color: red;
+}
+
+#modal-socials i {
+  margin-right: 8px;
+}
+
+
+
+
+
+.footer {
+  min-height: auto;
+  padding: 2rem 0;
+  background: rgb(0, 0, 0);
+}
+
+.footer .box-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer .box-container .box {
+  flex: 1 1 2rem;
+  margin: 1.5rem;
+}
+
+.footer .box-container .box h3 {
+  font-size: 2.5rem;
+  color: lime;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.footer .box p img {
+  width: 200px; /* Set desired width */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Ensure it's treated as a block for alignment */
+  margin: 0 auto; /* Center the image within its container */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  transition: transform 0.3s ease; /* Smooth transform transition */
+}
+
+.footer .box p img:hover {
+  animation: bounce 1s ease infinite; /* Apply the bounce animation */
+}
+
+/* Keyframes for bounce effect */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0); /* Starting and ending position */
+  }
+  40% {
+    transform: translateY(-20px); /* Move up */
+  }
+  60% {
+    transform: translateY(-10px); /* Smaller bounce */
+  }
+}
+
+.footer .box-container .box p i {
+  margin-right: 1rem;
+  color: lime;
+  padding: 1rem;
+}
+
+.footer .box-container .box a {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: rgb(238, 238, 238);
+  text-decoration: none;
+  padding: 0.5rem 0;
+  display: block;
+}
+
+.footer .box-container .box a:hover {
+  background: transparent;
+  color: lime;
+}
+
+.footer .box-container .box .share {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.8rem 0;
+}
+
+.footer .box-container .box .share a {
+  height: 1.8rem;
+  width: 1.8rem;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 5rem;
+  font-size: 1.7rem;
+  margin-right: 1.6rem;
+  transition: 0.2s;
+  background: rgb(230, 230, 230);
+  color: #02094b;
+  border: none;
+}
+
+.footer .box-container .box .share a:hover {
+  background: transparent;
+  transform: scale(0.98);
+  border: 0.1rem solid rgb(0, 0, 0);
+  color: lime;
+}
+
+.footer .credit {
+  padding: 2rem 0 0 0;
+  text-align: center;
+  font-size: 1rem;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 600;
+  color: #fff;
+  border-top: 0rem solid #fff3;
+}
+
+.footer .credit a {
+  font-size: 1rem;
+  color: lime;
+  text-decoration: none;
+}
+
+.footer .fa {
+  color: lime;
+  margin: 0 0.3rem;
+  font-size: 1rem;
+  animation: pound 0.35s infinite alternate;
+}
+
+/* Keyframes for pound animation */
+@keyframes pound {
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 1200px) {
+  .header {
+    padding: 1.5rem 5%;
+  }
+
+  header .navbar ul li {
+    margin-right: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 1rem 5%;
+  }
+
+  header .navbar {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .header__heading {
+    font-size: clamp(2.5rem, 6vw, 6rem);
+  }
+
+  .footer .box-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .header__heading {
+    font-size: clamp(2rem, 8vw, 4rem);
+    text-align: center;
+  }
+
+  .footer .box-container .box {
+    margin: 1rem 0;
+    flex: 1;
+  }
+
+  header .navbar ul li {
+    margin-right: 1rem;
+  }
+
+  .footer .box p img {
+    width: 100px;
+  }
+}
+
+
+
+/* Utility Classes for Flexibility */
+.text-center {
+  text-align: center;
+}
+
+.margin-auto {
+  margin: 0 auto;
+}
+
+/* Smooth Scroll Reveal */
+.wrapper {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.wrapper.reveal {
+  opacity: 1;
+  transform: translateY(20rem);
+}
+
+/* Ripple Effect for Buttons */
+button, .navbar a {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.ripple {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-animation 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Floating Header */
+header {
+  transition: transform 0.3s ease;
+}
+
+header.hidden {
+  transform: translateY(-100%);
+}
+
+  /* Preloader Styles */
+  #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  #preloader .spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ddd;
+    border-top: 5px solid #333;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Hide the content initially */
+  body {
+    visibility: hidden;
+    overflow: hidden;
+  }
+
+  body.loaded {
+    visibility: visible;
+    overflow: auto;
+  }
+  #upButton {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: #333;
+    color: white;
+    border: none;
+    outline: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+  }
+  
+  #upButton:hover {
+    background-color: lime;
+  }
+  
+  

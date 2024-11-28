@@ -1,0 +1,639 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Geist+Mono:wght@100..900&family=Lacquer&family=Press+Start+2P&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lacquer&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Lacquer&family=Press+Start+2P&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all 0.2s linear;
+  }
+html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary-font: "Montserrat";
+  --secondary-font: "Fira Code";
+  --primary-text-color: #ffffff;
+  --secondary-text-color: #c8dcff;
+  --primary-color: rgba(5, 30, 62, 0.4);
+  --secondary-color: #00f5a0;
+}
+
+body {
+  background: linear-gradient(180deg, #051e3e 0%, #023984 100%);
+  color: var(--primary-text-color);
+  font-family: var(--primary-font);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 10%;
+    height: 4.5rem; /* Increased height to fit text */
+    background-color: rgba(5, 12, 151, 0.475); /* Semi-transparent background */
+    backdrop-filter: blur(5px); /* Apply blur effect to the background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add slight shadow for better contrast */
+  }
+  
+  header .logo, header .navigation {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  /* Ensure text is legible */
+  header * {
+    transition: color 0.3s ease-in-out;
+  }
+  
+  /* Optional hover effect for text to enhance visibility */
+  header:hover * {
+    color: #ffeb3b; /* Change text color to a contrasting color when hovering */
+  }
+  
+
+header .logo img {
+  max-height: 80px; /* Adjust the height to fit the navbar */
+  width: auto; /* Maintain aspect ratio */
+  display: block; /* Prevent inline spacing issues */
+}
+
+@media (max-width: 768px) {
+  header .logo img {
+    max-height: 40px; /* Adjust for smaller screens */
+  }
+}
+
+header .logo {
+  font-size: 2.0rem;
+  font-weight: 800;
+  color: #e8102a;
+  text-decoration: none;
+}
+
+header .logo:hover {
+  color: #fc8c05;
+}
+
+header .navbar ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+
+}
+
+header .navbar li {
+margin-right: 3.5rem;
+}
+
+header .navbar ul li a {
+  font-size: 1.4rem;
+  color: #069aef;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+  border-bottom: 0.2s;
+}
+
+header .navbar ul li a.active,
+header .navbar ul li a:hover {
+  color: lime;
+  border-bottom: 0.1rem solid lime;
+  padding: 0.3rem 0;
+}
+#menu {
+  font-size: 3rem;
+  cursor: pointer;
+  color: rgb(24, 2, 63);
+  display: none;
+}
+@media (max-width: 768px) {
+  #menu {
+    display: block;
+  }
+header .navbar {
+  position: fixed;
+  top: 6.5rem;
+  right: -120%;
+  width: 75%;
+  height: 100%;
+  background-color: #0e0f31;
+  transition: right 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+}
+header .navbar ul {
+  flex-flow: column;
+  padding: 1rem;
+}
+header .navbar ul li {
+  text-align: center;
+  width: 100%;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  width: 26rem;
+}
+header .navbar ul li a {
+  display: block;
+  padding: 1rem;
+  text-align: left;
+  color: #fff;
+  font-size: 2rem;
+}
+header .navbar ul li a.active,
+header .navbar ul li a:hover {
+  padding: 1rem;
+  color: #fff;
+  border-radius: 0.5rem;
+  border-bottom: 0.5rem solid #011aff;
+}
+.fa-times {
+  transform: rotate(180deg);
+}
+header .navbar.nav-toggle {
+  right: 0;
+}
+}
+
+
+.conatiner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* General styling for the contact section */
+.contact {
+    background: linear-gradient(180deg, #051e3e 0%, #023984 100%);
+    padding: 6rem 0;
+    height: 100vh;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact .heading {
+    font-family: "Ubuntu", sans-serif;
+    font-style: normal;
+    font-size: 3.5rem;
+    padding: 3rem 0;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: lime;
+  }
+  
+  .contact .heading span {
+    color: #007bff;
+  }
+  
+  .contact .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+  }
+  
+  .contact .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .contact .image-box {
+    flex: 1 1 40%;
+    max-width: 500px;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    box-shadow: 0 5px 15px transparent;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .contact .image-box img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 1.5rem;
+  }
+  
+  .contact .image-box:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
+  
+  .contact .content form {
+    width: 45%;
+    margin-right: 3.5rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .form-group .field {
+    height: 50px;
+    display: flex;
+    position: relative;
+    margin: 1rem 0; /* Added vertical spacing */
+    width: 100%;
+  }
+  
+  form i {
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    color: rgb(51, 51, 51);
+    font-size: 17px;
+    pointer-events: none;
+    transform: translateY(-50%);
+  }
+  
+  form .field input,
+  form .message textarea {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    padding: 0 16px 0 48px;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    border-radius: 5px;
+    border: 1px solid rgb(51, 51, 51);
+    background: #e5ecfb;
+  }
+  
+  .field input::placeholder,
+  .message textarea::placeholder {
+    color: rgb(51, 51, 51);
+  }
+  
+  .field input:focus,
+  .message textarea:focus {
+    padding-left: 47px;
+    border: 2px solid rgb(115, 3, 167);
+  }
+  
+  .field input:focus ~ i,
+  .message textarea:focus ~ i {
+    color: rgb(115, 3, 167);
+  }
+  
+  form .message {
+    position: relative;
+    margin: 1rem 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  form .message i {
+    top: 25px;
+    font-size: 20px;
+    left: 15px;
+  }
+  
+  form .message textarea {
+    min-height: 130px;
+    max-height: 130px;
+    padding: 12px 0px 0 48px;
+  }
+  
+  form .button-area {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-direction: row-reverse;
+  }
+  
+  .button-area button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px 25px;
+    background: #2506ad;
+    box-shadow: 0px 5px 10px rgba(48, 68, 247, 0.6);
+    transition: 0.3s ease;
+    font-family: "Nunito", sans-serif;
+  }
+  
+  .button-area button:hover {
+    background: #421cecf5;
+  }
+  .button-area span {
+    font-size: 17px;
+    padding: 1rem;
+    display: none;
+  }
+  .button-area button i {
+    position: relative;
+    top: 9px;
+    left: 12px;
+    font-size: 1.2rem;
+    transition: 0.3s;
+    color: #fff;
+  }
+  .button-area button:hover i {
+    left: 8px;
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .contact .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .contact .image-box {
+      max-width: 90%;
+      margin-bottom: 2rem;
+    }
+  
+    .contact form {
+      width: 90%;
+      margin-top: 2rem;
+    }
+  }
+  
+  
+.footer {
+  min-height: auto;
+  padding: 2rem 0;
+  background: rgb(0, 0, 0);
+}
+
+.footer .box-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer .box-container .box {
+  flex: 1 1 2rem;
+  margin: 1.5rem;
+}
+
+.footer .box-container .box h3 {
+  font-size: 2.5rem;
+  color: lime;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.footer .box p img {
+  width: 200px; /* Set desired width */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Ensure it's treated as a block for alignment */
+  margin: 0 auto; /* Center the image within its container */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  transition: transform 0.3s ease; /* Smooth transform transition */
+}
+
+.footer .box p img:hover {
+  animation: bounce 1s ease infinite; /* Apply the bounce animation */
+}
+
+/* Keyframes for bounce effect */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0); /* Starting and ending position */
+  }
+  40% {
+    transform: translateY(-20px); /* Move up */
+  }
+  60% {
+    transform: translateY(-10px); /* Smaller bounce */
+  }
+}
+
+.footer .box-container .box p i {
+  margin-right: 1rem;
+  color: lime;
+  padding: 1rem;
+}
+
+.footer .box-container .box a {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: rgb(238, 238, 238);
+  text-decoration: none;
+  padding: 0.4rem 0;
+  display: block;
+}
+
+.footer .box-container .box a:hover {
+  background: transparent;
+  color: lime;
+}
+.footer .box-container .box .share {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.8rem 0;
+}
+.footer .box-container .box .share a {
+  height: 3rem;
+  width: 3rem;
+  padding: 0.6rem;
+  text-align: center;
+  border-radius: 5rem;
+  font-size: 1.7rem;
+  margin-right: 1.6rem;
+  transition: 0.2s;
+  background: rgb(230, 230, 230);
+  color: #02094b;
+  border: none;
+}
+.footer .box-container .box .share a:hover {
+  background: transparent;
+  transform: scale(0.98);
+  border: 0.1rem solid rgb(0, 0, 0);
+  color: lime;
+}
+.footer .credit {
+  padding: 1rem 0 0 0;
+  text-align: center;
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  color: #fff;
+  border-top: 0rem solid #fff3;
+}
+.footer .credit a {
+  font-size: 1rem;
+  color: lime;
+  text-decoration: none;
+}
+.footer .fa {
+  color: lime;
+  margin: 0 0.3rem;
+  font-size: 1rem;
+  animation: pound 0.35s infinite alternate;
+}
+@-webkit-keyframes pound {
+  to {
+    transform: scale(1.1);
+  }
+}
+@keyframes pound {
+  to {
+    transform: scale(1.1);
+  }
+}
+@media (max-width: 1200px) {
+  .header {
+    padding: 1.5rem 5%;
+  }
+
+  header .navbar ul li {
+    margin-right: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 1rem 5%;
+  }
+
+  header .navbar {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .header__heading {
+    font-size: clamp(2.5rem, 6vw, 6rem);
+  }
+
+  .footer .box-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .header__heading {
+    font-size: clamp(2rem, 8vw, 4rem);
+    text-align: center;
+  }
+
+  .footer .box-container .box {
+    margin: 1rem 0;
+    flex: 1;
+  }
+
+  header .navbar ul li {
+    margin-right: 1rem;
+  }
+
+  .footer .box p img {
+    width: 100px;
+  }
+}
+
+/* Utility Classes for Flexibility */
+.text-center {
+  text-align: center;
+}
+
+.margin-auto {
+  margin: 0 auto;
+}
+
+/* General styling for .fa-comment-dots */
+.fas.fa-comment-dots {
+    font-size: 20px; /* Base size for the icon */
+    color: black; /* Default color */
+    position: absolute;
+    top: 25px; /* Adjust position to align with textarea */
+    left: 15px; /* Space from the left edge */
+    transform: translateY(-50%); /* Center vertically */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth animations */
+    pointer-events: none; /* Prevent clicking or selection */
+  }
+  
+  /* Highlight effect when the textarea is focused */
+  form .message textarea:focus ~ .fa-comment-dots {
+    color: lime; /* Highlight color on focus */
+    transform: translateY(-50%) scale(1.1); /* Slight zoom effect */
+  }
+  
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 768px) {
+    .fas.fa-comment-dots {
+      font-size: 18px; /* Slightly smaller icon size for mobile */
+      left: 12px; /* Adjust spacing for compact layouts */
+    }
+  }
+  /* Smooth Scroll Reveal */
+section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  section.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Navbar Animation */
+  .navbar.active {
+    transform: translateY(0);
+  }
+  
+  #menu.fa-times {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Button Ripple Effect */
+  button {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  button span {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.5s linear;
+    pointer-events: none;
+  }
+  
+  @keyframes ripple {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+  

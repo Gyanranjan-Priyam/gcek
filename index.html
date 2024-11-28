@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./assets/logo.png">
+  <title>CodeBreakers</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+   <!-- Preloader -->
+   <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+
+
+  <header>
+    <a href="index.html" class="logo"><img src="./assets/logo.png"></a>
+    <div id="menu" class="fas fa-bars"></div>
+    <nav class="navbar">
+      <ul>
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="matrix-container">
+      <canvas id="matrix"></canvas>
+    </div>
+
+    <div class="social-media-bar">
+      <a href="https://github.com/CodeBreakersGCEK" class="fab fa-github" target="_blank"></a>
+      <a href="https://instagram.com/codebreakersgcek" class="fab fa-instagram" target="_blank"></a>
+      <a href="https://twitter.com/CodeBreakersGCEK" class="fab fa-twitter" target="_blank"></a>
+      <a href="mailto:" class="fa fa-envelope" target="_blank"></a>
+    </div>
+
+    <div class="wrapper header">
+      <p class="header__sub-heading">Hi there, we are</p>
+      <h1 class="header__heading" data-text="CodeBreakers">CodeBreakers</h1>
+      <p id="typing-effect" class="header__sub-heading">We break the rules, We break the code.</p>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="about-section">
+    <div class="wrapper about">
+      <h3 class="wrapper__heading" data-text="About Us">About <span>Us</span></h3>
+      <p class="wrapper__paragraph">
+        We are a group of passionate tech enthusiasts from the Government College of Engineering, Kalahandi, united under the banner of our vibrant coding club, CODEBREAKERS. Our club serves as a platform for students to explore, innovate, and excel in the ever-evolving world of programming and technology. At CODEBREAKERS, we believe in fostering a culture of creativity, collaboration, and learning. Whether it’s mastering the basics of coding, solving complex algorithms, building innovative projects, or participating in hackathons, we strive to push boundaries and embrace challenges. Together, we aim to inspire and empower future tech leaders while making a meaningful impact through the power of code.
+      </p>
+    </div>
+  </section>
+
+  <!-- Our Team Section -->
+  <section id="team" class="team-section">
+    <div class="wrapper team">
+      <h2 class="wrapper__team" data-text="Our Team"><i class="fa-solid fa-user-group"></i>Our <span>Team</span></h2>
+      <div class="team__cards">
+        <!-- Profile Card 1 -->
+        <div class="card" 
+             data-name="Harsh_Keshari" 
+             data-role="Senior Member" 
+             data-email="harshkeshri1234567@gmail.com" 
+             data-img="./assets/harash.jpeg"
+             data-github="https://github.com/airbornharsh"
+             data-instagram="https://www.instagram.com/airbornharsh/"
+             data-email="mailto:harshkeshri1234567@gmail.com"
+             data-linkedin="https://www.linkedin.com/in/airbornharsh/">
+          <img src="./assets/harash.jpeg" alt="Team Member 1" class="card__image">
+          <h3 class="card__name">Harsh Keshari</h3>
+          <p class="card__role">Senior Member</p>
+        </div>
+        <!-- Profile Card 2 -->
+        <div class="card" 
+             data-name="Rajsekhar_Panda" 
+             data-role="Senior Member" 
+             data-email="jane.smith@example.com" 
+             data-img="./assets/rajsekhar.webp"
+             data-github="https://github.com/rajsekharpanda"
+             data-instagram="https://instagram.com/rajsekhar_panda"
+             data-email="mailto:jane.smith@example.com"
+             data-linkedin="https://linkedin.com/in/rajsekharpanda">
+          <img src="./assets/rajsekhar.webp" alt="Team Member 2" class="card__image">
+          <h3 class="card__name">Rajsekhar Panda</h3>
+          <p class="card__role">Senior Member</p>
+        </div>
+        <!-- Profile Card 3 -->
+        <div class="card" 
+             data-name="Lokanath_Panda" 
+             data-role="Senior Member" 
+             data-email="lokanathpanda128@gmail.com" 
+             data-img="./assets/lokanath.webp"
+             data-github="https://github.com/iamlokanath"
+             data-instagram="https://www.instagram.com/lokanathpanda7/"
+             data-email="mailto:lokanathpanda128@gmail.com"
+             data-linkedin=https://www.linkedin.com/in/lokanath-panda-642193238/">
+          <img src="./assets/lokanath.webp" alt="Team Member 3" class="card__image">
+          <h3 class="card__name">Lokanath Panda</h3>
+          <p class="card__role">Senior Member</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <div id="teamModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img id="modal-image" src="" alt="Team Member Image" />
+      <h2 id="modal-name"></h2>
+      <p id="modal-role"></p>
+      <p id="modal-email"></p>
+      <div id="modal-socials" class="socials">
+        <a href="https://github.com/" class="fab fa-github" target="_blank"></a>
+        <a href="https://instagram.com/" class="fab fa-instagram" target="_blank"></a>
+        <a href="mailto:" class="fa fa-envelope" target="_blank"></a>
+        <a href="https://linkedin.com/in/" class="fab fa-linkedin" target="_blank"></a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <section class="footer">
+    <div class="box-container">
+      <div class="box">
+        <h3>CodeBreakers</h3>
+        <p><img src="./assets/logo.png"></p>
+      </div>
+      <div class="box">
+        <h3>Quick Links</h3>
+        <a href="#hero"><i class="fas fa-chevron-circle-right"></i> Home</a>
+        <a href="#about"><i class="fas fa-chevron-circle-right"></i> About</a>
+        <a href="#team"><i class="fas fa-chevron-circle-right"></i> Team</a>
+        <a href="https://www.gcekbpatna.ac.in/"><i class="fas fa-chevron-circle-right"></i> GCEK Bhawanipatna</a>
+      </div>
+      <div class="box">
+        <h3>Contact Info</h3>
+        <p><i class="fas fa-phone"></i> +91 XXX-XXX-XXXX</p>
+        <p><i class="fas fa-envelope"></i> XXXXXXXXXXXXXX@gmail.com</p>
+        <p><i class="fas fa-map-marked-alt"></i> Govt College of Engineering Kalahandi, Bhawanipatna India-766002</p>
+        <div class="share">
+          <a href="https://github.com/CodeBreakersGCEK" class="fab fa-github" aria-label="GitHub" target="_blank"></a>
+          <a href="mailto:" class="fas fa-envelope" aria-label="Mail" target="_blank"></a>
+          <a href="https://x.com/" class="fab fa-twitter" aria-label="Twitter" target="_blank"></a>
+          <a href="https://instagram.com/codebreakersgcek" class="fab fa-instagram" aria-label="Instagram" target="_blank"></a>
+        </div>
+      </div>
+    </div>
+    <h1 class="credit">Designed with <i class="fa fa-heart pulse"></i> by <a href="#">CodeBreakers Team</a> || Copyright <i class="fa fa-copyright"></i> 2024 and Rights goes to <i class="fa fa-registered"></i><a href="#">CodeBreakers</a></h1>
+  </section>
+
+
+<!-- Up Page Button -->
+<button id="upButton" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+
+  <script>
+      // Preloader
+      window.addEventListener("load", function () {
+      const preloader = document.getElementById("preloader");
+      preloader.style.display = "none";
+      document.body.classList.add("loaded");
+    });
+  </script>
+
+
+
+  <!-- Include the particles.js library -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<!-- Include tsParticles -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@1.37.1/tsparticles.min.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+
+</html>

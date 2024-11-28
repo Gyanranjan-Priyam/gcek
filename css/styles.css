@@ -917,4 +917,367 @@ header.hidden {
     background-color: lime;
   }
   
+/* General Responsive Adjustments */
+@media (max-width: 1024px) {
+  /* Header */
+  header {
+    padding: 1rem 5%;
+  }
+  header .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  header .navbar li {
+    margin: 1rem 0;
+  }
+  header .navbar ul li a {
+    font-size: 1.2rem;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+  .header__heading {
+    font-size: 6rem;
+    padding: 2rem;
+  }
+  .header__sub-heading {
+    font-size: 1.8rem;
+  }
+
+  /* Social Media Bar */
+  .social-media-bar {
+    bottom: 10px;
+    right: 50%;
+    transform: translateX(50%);
+    display: flex;
+    gap: 1rem;
+  }
+  .social-media-bar a {
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Wrapper */
+  .wrapper__heading {
+    font-size: 3rem;
+  }
+  .wrapper__paragraph {
+    font-size: 1.2rem;
+    padding: 1rem;
+    line-height: 1.8rem;
+  }
+
+  /* About Section */
+  .about-section {
+    padding: 2rem;
+    text-align: center;
+  }
+
+  /* Team Section */
+  .team__cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    width: 90%;
+    margin: 1rem 0;
+  }
+
+  /* Footer Section */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  footer .footer__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  footer .footer__links a {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Header */
+  header .navbar {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  /* Hero Section */
+  .header__heading {
+    font-size: 4rem;
+    padding: 1rem;
+  }
+  .header__sub-heading {
+    font-size: 1.6rem;
+  }
+
+  /* Social Media Bar */
+  .social-media-bar a {
+    font-size: 18px;
+    width: 35px;
+    height: 35px;
+  }
+
+  /* Wrapper */
+  .wrapper__heading {
+    font-size: 2.5rem;
+  }
+  .wrapper__paragraph {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    max-width: 100%;
+  }
+
+  /* About Section */
+  .about-section {
+    padding: 1rem;
+  }
+
+  /* Team Section */
+  .team__cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    width: 95%;
+    margin: 1rem 0;
+  }
+
+  /* Footer Section */
+  footer {
+    padding: 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Header */
+  header {
+    padding: 0.5rem;
+  }
+  header .logo img {
+    max-height: 30px;
+  }
+  header .navbar ul li a {
+    font-size: 1rem;
+  }
+
+  /* Hero Section */
+  .header__heading {
+    font-size: 3rem;
+    padding: 0.5rem;
+  }
+  .header__sub-heading {
+    font-size: 1.4rem;
+  }
+
+  /* Social Media Bar */
+  .social-media-bar {
+    bottom: 10px;
+    right: 0;
+    left: 0;
+    transform: none;
+    justify-content: center;
+  }
+  .social-media-bar a {
+    font-size: 16px;
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Wrapper */
+  .wrapper__heading {
+    font-size: 2rem;
+  }
+  .wrapper__paragraph {
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+  }
+
+  /* Team Section */
+  .card {
+    width: 100%;
+    margin: 1rem 0;
+  }
+  .card__image {
+    width: 80px;
+    height: 80px;
+  }
+  .card__name {
+    font-size: 1.2rem;
+  }
+  .card__role {
+    font-size: 1rem;
+  }
+  .card__socials a {
+    font-size: 1.2rem;
+  }
+
+  /* Footer Section */
+  footer {
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+  footer .footer__links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  footer .footer__links a {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  /* Hero Section */
+  .header__heading {
+    font-size: 2.5rem;
+  }
+  .header__sub-heading {
+    font-size: 1.2rem;
+  }
+
+  /* Wrapper */
+  .wrapper__heading {
+    font-size: 1.8rem;
+  }
+  .wrapper__paragraph {
+    font-size: 0.8rem;
+  }
+
+  /* Footer Section */
+  footer {
+    font-size: 0.7rem;
+  }
+}
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  /* Team Section - Smaller Cards */
+  .team__cards {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center;
+  }
+
+  .card {
+    width: 90%; /* Reduce card width */
+    margin: 1rem auto;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .card__image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+  }
+
+  .card__name {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+  }
+
+  .card__role {
+    font-size: 1rem;
+    color: #555;
+  }
+
+  .card__socials a {
+    font-size: 1.2rem;
+    margin: 0 0.5rem;
+  }
+
+  /* Footer Section - Compact Layout */
+  footer {
+    padding: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+    background: #f1f1f1;
+  }
+
+  .footer .box-container {
+    display: flex;
+    flex-direction: column; /* Stack boxes vertically */
+    gap: 1rem;
+  }
+
+  .footer .box {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .footer .share a {
+    font-size: 1.2rem;
+    margin: 0 0.5rem;
+  }
+
+  .footer .credit {
+    font-size: 0.8rem;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Team Section - Smaller Cards */
+  .card {
+    width: 95%; /* Further reduce card width for smaller screens */
+    padding: 0.8rem;
+  }
+
+  .card__image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .card__name {
+    font-size: 1rem;
+  }
+
+  .card__role {
+    font-size: 0.9rem;
+  }
+
+  /* Footer Section - Compact Layout */
+  footer {
+    padding: 0.5rem;
+  }
+
+  .footer h3 {
+    font-size: 0.9rem;
+  }
+
+  .footer p {
+    font-size: 0.8rem;
+  }
+
+  .footer .share a {
+    font-size: 1rem;
+  }
+
+  .footer .credit {
+    font-size: 0.7rem;
+  }
+}
   

@@ -1,3 +1,22 @@
+ // Detect mobile devices
+ function isMobileDevice() {
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  return /android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(userAgent);
+}
+
+// Mobile preview block logic
+const mobilePreview = document.getElementById('mobilePreview');
+const closePreviewButton = document.getElementById('closePreview');
+
+if (isMobileDevice()) {
+  mobilePreview.classList.add('active');
+}
+
+// Allow user to close the preview
+closePreviewButton.addEventListener('click', () => {
+  mobilePreview.classList.remove('active');
+});
+
 // Smooth Scroll Animation
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -6,37 +25,29 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if (targetElement) {
       targetElement.scrollIntoView({
         behavior: 'smooth',
-        block: 'start' // Ensures the target is aligned at the top
+        block: 'start'
       });
     }
   });
 });
 
 // Footer Animation
-const footerBoxes = document.querySelectorAll('.footer .box'); // Select all footer boxes
-const footerCredit = document.querySelector('.footer .credit'); // Select footer credit
-
-const footerObserverOptions = {
-  threshold: 0.1 // Trigger animation when 10% of the element is visible
-};
-
+const footerBoxes = document.querySelectorAll('.footer .box');
+const footerCredit = document.querySelector('.footer .credit');
+const footerObserverOptions = { threshold: 0.1 };
 const footerObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('animate-footer'); // Add animation class
-      observer.unobserve(entry.target); // Stop observing once animation is triggered
+      entry.target.classList.add('animate-footer');
+      observer.unobserve(entry.target);
     }
   });
 }, footerObserverOptions);
+footerBoxes.forEach(box => footerObserver.observe(box));
 
 // Intersection Observer for Scroll Animations
 const sections = document.querySelectorAll('section');
-const options = {
-  root: null, // The viewport
-  threshold: 0.2, // Trigger when 20% of the element is visible
-  rootMargin: "0px",
-};
-
+const options = { root: null, threshold: 0.2, rootMargin: "0px" };
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -46,16 +57,14 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, options);
-
 sections.forEach(section => observer.observe(section));
 
 // Navbar Toggle Animation
 const menu = document.querySelector('#menu');
 const navbar = document.querySelector('.navbar');
-
 menu.addEventListener('click', () => {
-  navbar.classList.toggle('active'); // Toggles the 'active' class for the navbar
-  menu.classList.toggle('fa-times'); // Toggles the icon class for menu
+  navbar.classList.toggle('active');
+  menu.classList.toggle('fa-times');
 });
 
 // Button Hover Ripple Effect
@@ -71,7 +80,6 @@ buttons.forEach(button => {
     ripple.classList.add('ripple');
     this.appendChild(ripple);
 
-    // Remove the ripple after animation ends
     setTimeout(() => {
       ripple.remove();
     }, 500);

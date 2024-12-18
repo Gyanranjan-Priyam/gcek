@@ -1,21 +1,3 @@
- // Detect mobile devices
- function isMobileDevice() {
-  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-  return /android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(userAgent);
-}
-
-// Mobile preview block logic
-const mobilePreview = document.getElementById('mobilePreview');
-const closePreviewButton = document.getElementById('closePreview');
-
-if (isMobileDevice()) {
-  mobilePreview.classList.add('active');
-}
-
-// Allow user to close the preview
-closePreviewButton.addEventListener('click', () => {
-  mobilePreview.classList.remove('active');
-});
 
 // Smooth Scroll Animation
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
